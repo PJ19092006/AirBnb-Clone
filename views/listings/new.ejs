@@ -1,0 +1,219 @@
+<% layout("/layouts/boilerplate") -%>
+<div class="row">
+  <div class="col-8 offset-2">
+    <h3>Create a New Listing</h3>
+    <form
+      method="post"
+      action="/listings"
+      class="needs-validation"
+      novalidate
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          name="listing[title]"
+          required
+          placeholder="Enter title"
+          class="form-control"
+        />
+        <div class="valid-feedback">Looks Good!</div>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          name="listing[description]"
+          class="form-control"
+          required
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload Image</label>
+        <input
+          type="file"
+          name="listing[image]"
+          required
+          class="form-control"
+        />
+        <div class="invalid-feedback">Enter a valid URL</div>
+      </div>
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input
+            type="number"
+            name="listing[price]"
+            placeholder="Enter price"
+            required
+            class="form-control"
+          />
+          <div class="invalid-feedback">Enter a price</div>
+        </div>
+        <div class="mb-3 col-md-8">
+          <label for="country" class="form-label">Country</label>
+          <input
+            type="text"
+            name="listing[country]"
+            placeholder="Enter country"
+            required
+            class="form-control"
+          />
+          <div class="invalid-feedback">Enter a valid country name</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          type="text"
+          name="listing[location]"
+          placeholder="Enter location"
+          required
+          class="form-control"
+        />
+        <div class="invalid-feedback">Enter a valid location</div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Filter</label>
+        <div class="d-flex flex-wrap">
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="btn-check-Trending"
+            name="listing[filter][]"
+            value="Trending"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-dark me-2" for="btn-check-Trending"
+            >Trending</label
+          >
+
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="btn-check-Rooms"
+            name="listing[filter][]"
+            value="Rooms"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-dark me-2" for="btn-check-Rooms"
+            >Rooms</label
+          >
+
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="btn-check-MountainCity"
+            name="listing[filter][]"
+            value="MountainCity"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-dark me-2" for="btn-check-MountainCity"
+            >Mountain City</label
+          >
+
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="btn-check-Mountain"
+            name="listing[filter][]"
+            value="Mountain"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-dark me-2" for="btn-check-Mountain"
+            >Mountain</label
+          >
+
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="btn-check-Castle"
+            name="listing[filter][]"
+            value="Castle"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-dark me-2" for="btn-check-Castle"
+            >Castle</label
+          >
+
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="btn-check-Camping"
+            name="listing[filter][]"
+            value="Camping"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-dark me-2" for="btn-check-Camping"
+            >Camping</label
+          >
+
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="btn-check-AmazingPools"
+            name="listing[filter][]"
+            value="Amazing pools"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-dark me-2" for="btn-check-AmazingPools"
+            >Amazing Pools</label
+          >
+
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="btn-check-Farms"
+            name="listing[filter][]"
+            value="Farms"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-dark me-2" for="btn-check-Farms"
+            >Farms</label
+          >
+
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="btn-check-Arctic"
+            name="listing[filter][]"
+            value="Arctic"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-dark me-2" for="btn-check-Arctic"
+            >Arctic</label
+          >
+
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="btn-check-Ship"
+            name="listing[filter][]"
+            value="Ship"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-dark me-2" for="btn-check-Ship"
+            >Ship</label
+          >
+
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="btn-check-Dinner"
+            name="listing[filter][]"
+            value="Dinner"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-dark me-2" for="btn-check-Dinner"
+            >Dinner</label
+          >
+        </div>
+      </div>
+      <br />
+      <button class="btn btn-dark add-btn" onclick="geocodeLocation()">
+        Add
+      </button>
+    </form>
+    <br />
+  </div>
+</div>
